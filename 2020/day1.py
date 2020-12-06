@@ -46,9 +46,16 @@ def B():
         nums.append(i)
 
 
+solutions = [None, None]
+
+
 def print_solutions():
-    for part in ['A', 'B']:
-        print("PART {}:".format(part), globals()[part]())
+    for i, part in enumerate(['A', 'B']):
+        solution = globals()[part]()
+        if solutions[i] is not None:
+            assert (solution == solutions[i])
+
+        print("PART {}:".format(part), solution)
 
 
 if __name__ == "__main__":

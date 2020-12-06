@@ -18,6 +18,7 @@ def A():
         if md5(to_hash).hexdigest().startswith('00000'):
             return i
 
+
 def B():
     from itertools import count
     from hashlib import md5
@@ -27,9 +28,17 @@ def B():
         if md5(to_hash).hexdigest().startswith('000000'):
             return i
 
+
+solutions = [None, None]
+
+
 def print_solutions():
-    for part in ['A', 'B']:
-        print("PART {}:".format(part), globals()[part]())
+    for i, part in enumerate(['A', 'B']):
+        solution = globals()[part]()
+        if solutions[i] is not None:
+            assert (solution == solutions[i])
+
+        print("PART {}:".format(part), solution)
 
 
 if __name__ == "__main__":
