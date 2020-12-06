@@ -16,9 +16,9 @@ def A():
         for line in group.split():
             for c in line:
                 s.add(c)
-        
+
         ans += len(s)
-    
+
     return ans
 
 
