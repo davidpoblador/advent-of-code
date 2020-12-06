@@ -12,12 +12,7 @@ except AocdError:
 def A():
     ans = 0
     for group in data.split("\n\n"):
-        s = set()
-        for line in group.split():
-            for c in line:
-                s.add(c)
-
-        ans += len(s)
+        ans += len(set([d for d in group.replace("\n", "")]))
 
     return ans
 
@@ -40,7 +35,7 @@ def B():
     return ans
 
 
-solutions = [None, None]
+solutions = (6748, 3445)
 
 
 def print_solutions():
